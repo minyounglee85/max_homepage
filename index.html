@@ -23,31 +23,55 @@
     <div class="container">
         <h1>테스트 홈페이지</h1>
         <p>이 페이지는 테스트용으로 만들어진 홈페이지입니다.</p>
-        <button id="testButton">클릭하세요</button>
+        <button id="testButton1">버튼 1</button>
+        <button id="testButton2">버튼 2</button>
+        <button id="testButton3">버튼 3</button>
+        <button id="testButton4">버튼 4</button>
+        <button id="testButton5">버튼 5</button>
     </div>
 
     <script>
         // JavaScript 코드
-        document.getElementById('testButton').addEventListener('click', function() {
-            alert('버튼이 클릭되었습니다!');
+        function trackEvent(buttonName) {
+            alert(buttonName + ' 버튼이 클릭되었습니다!');
             
             // Google Analytics 4 이벤트 트래킹 예제
             gtag('event', 'click', {
                 'event_category': 'button',
-                'event_label': 'test_button',
+                'event_label': buttonName,
                 'value': 1
             });
+        }
+
+        document.getElementById('testButton1').addEventListener('click', function() {
+            trackEvent('버튼 1');
+        });
+
+        document.getElementById('testButton2').addEventListener('click', function() {
+            trackEvent('버튼 2');
+        });
+
+        document.getElementById('testButton3').addEventListener('click', function() {
+            trackEvent('버튼 3');
+        });
+
+        document.getElementById('testButton4').addEventListener('click', function() {
+            trackEvent('버튼 4');
+        });
+
+        document.getElementById('testButton5').addEventListener('click', function() {
+            trackEvent('버튼 5');
         });
     </script>
 
     <!-- Google Analytics 4 태그 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_계정_ID"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1234567890"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'GA4_계정_ID');
+        gtag('config', 'G-1234567890');
     </script>
 </body>
 </html>
