@@ -48,13 +48,6 @@
         // JavaScript 코드
         function trackEvent(buttonName) {
             alert(buttonName + ' 버튼이 클릭되었습니다!');
-            
-            // Google Analytics 4 이벤트 트래킹 예제
-            gtag('event', 'click', {
-                'event_category': 'button',
-                'event_label': buttonName,
-                'value': 1
-            });
         }
 
         document.getElementById('testButton1').addEventListener('click', function() {
