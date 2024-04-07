@@ -60,19 +60,29 @@
             trackEvent('버튼 2');
         });
         
-        // 오늘 날짜 보기 버튼 이벤트 리스너
-        document.getElementById('showDateButton').addEventListener('click', function() {
+        // 전역 변수로 dateString 설정
+        var dateString;
+        
+        // 페이지 로드 시 오늘 날짜 초기화
+        function setDateString() {
             const today = new Date();
             const year = today.getFullYear();
             const month = String(today.getMonth() + 1).padStart(2, '0');  // 월은 0부터 시작하므로 +1 필요
             const date = String(today.getDate()).padStart(2, '0');
+            
+            dateString = year + '-' + month + '-' + date;
+        }
 
-            const dateString = year + '-' + month + '-' + date;
+        // 오늘 날짜 초기화
+        setDateString();
+
+        // 오늘 날짜 보기 버튼 이벤트 리스너
+        document.getElementById('showDateButton').addEventListener('click', function() {
             alert('오늘 날짜는 ' + dateString + '입니다.');
 
-            // 팝업으로 오늘 날짜 표시
-            document.getElementById('datePopup').textContent = '오늘 날짜는 ' + dateString + '입니다.';
-            document.getElementById('datePopup').style.display = 'block';
+        // 팝업으로 오늘 날짜 표시
+        document.getElementById('datePopup').textContent = '오늘 날짜는 ' + dateString + '입니다.';
+        document.getElementById('datePopup').style.display = 'block';
         });
 
     </script>
