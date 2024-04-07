@@ -41,8 +41,6 @@
         <button id="testButton1">버튼 1</button>
         <button id="testButton2">버튼 2</button>
 
-        <button id="addToCartButton" data-product-name="맥스면도기" data-product-price="10000">장바구니 추가</button>
-
     <script>
         // JavaScript 코드
         function trackEvent(buttonName) {
@@ -57,12 +55,7 @@
             trackEvent('버튼 2');
         });
 
-        // 장바구니 추가 버튼 이벤트 리스너
-        document.getElementById('addToCartButton').addEventListener('click', function() {
-            const productName = this.getAttribute('data-product-name');
-            const productPrice = this.getAttribute('data-product-price');
-            alert(productName + ' 상품이 장바구니에 추가되었습니다! 가격: ' + productPrice + '원');
-         });
+
     </script>
 
 </body>
