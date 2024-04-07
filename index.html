@@ -41,6 +41,11 @@
         <button id="testButton1">버튼 1</button>
         <button id="testButton2">버튼 2</button>
 
+        <button id="showDateButton">오늘 날짜 보기</button>
+        <div id="datePopup" style="display:none;">
+            <!-- 날짜 표시를 위한 팝업 내용 -->
+        </div>
+
     <script>
         // JavaScript 코드
         function trackEvent(buttonName) {
@@ -54,7 +59,21 @@
         document.getElementById('testButton2').addEventListener('click', function() {
             trackEvent('버튼 2');
         });
+        
+        // 오늘 날짜 보기 버튼 이벤트 리스너
+        document.getElementById('showDateButton').addEventListener('click', function() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');  // 월은 0부터 시작하므로 +1 필요
+            const date = String(today.getDate()).padStart(2, '0');
 
+            const dateString = year + '-' + month + '-' + date;
+            alert('오늘 날짜는 ' + dateString + '입니다.');
+
+            // 팝업으로 오늘 날짜 표시
+            document.getElementById('datePopup').textContent = '오늘 날짜는 ' + dateString + '입니다.';
+            document.getElementById('datePopup').style.display = 'block';
+        });
 
     </script>
 
