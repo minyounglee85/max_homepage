@@ -40,9 +40,6 @@
         <p>이 페이지는 테스트용으로 만들어진 홈페이지입니다.</p>
         <button id="testButton1">버튼 1</button>
         <button id="testButton2">버튼 2</button>
-        <button id="testButton3">버튼 3</button>
-        <button id="testButton4">버튼 4</button>
-        <button id="testButton5">버튼 5</button>
 
         <button id="addToCartButton" data-product-name="가상상품명" data-product-price="10000">장바구니 추가</button>
 
@@ -60,19 +57,7 @@
             trackEvent('버튼 2');
         });
 
-        document.getElementById('testButton3').addEventListener('click', function() {
-            trackEvent('버튼 3');
-        });
-
-        document.getElementById('testButton4').addEventListener('click', function() {
-            trackEvent('버튼 4');
-        });
-
-        document.getElementById('testButton5').addEventListener('click', function() {
-            trackEvent('버튼 5');
-        });
-
-         // 장바구니 추가 버튼 이벤트 리스너
+        // 장바구니 추가 버튼 이벤트 리스너
         document.getElementById('addToCartButton').addEventListener('click', function() {
             const productName = this.getAttribute('data-product-name');
             const productPrice = this.getAttribute('data-product-price');
